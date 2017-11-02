@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ffmpeg.h"
 
 @interface ViewController ()
 
@@ -17,8 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"YOUTH" ofType:@"amr"];
+    NSString *targetPath = [NSString stringWithFormat:@"%@/YOUTH.wav", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]];
+    NSLog(@"%@ %@", sourcePath, targetPath);
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
